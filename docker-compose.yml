@@ -1,0 +1,17 @@
+version: '3'
+services:
+  main:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: data_science
+    # -v option
+    volumes:
+      - ./:/workspace
+    # -i option
+    stdin_open: true
+    # -t option
+    tty: true
+    # port for jupyter
+    ports:
+    - "127.0.0.1:8888:8888"
